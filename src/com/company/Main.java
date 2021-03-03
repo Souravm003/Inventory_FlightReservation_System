@@ -5,16 +5,23 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        Flight flt = new Flight("1240121", "SpiceJet" , 450, 100);
-        flt.incrementBookingCounter();
-        System.out.println(flt);
-        System.out.println(flt.getFlightDetails());
-        System.out.println(flt.checkAvailability());
+        Ticket regularTicket = new RegularTicket("10943", "West Bengal",
+                "Puducherry", "DepartureDateTime", "ArrivalDateTime",
+                "16C", 5000, false, null, null, "lunch");
 
+        Ticket touristTicket = new TouristTicket("90832", "India", "Chicago",
+                "DepartureDateTime", "ArrivalDateTIme",
+                "13B", 18000, true, null, null,
+                "Carlton Inn Midway", new String[]{"Polk Bros Park", "Cloud Gate"});
 
-
-
-
-
+        printTicketDetails(regularTicket);
+        printTicketDetails(touristTicket);
     }
+
+    public static void printTicketDetails(Ticket ticket) {
+        System.out.println(ticket.getPnr());
+    }
+
+
 }
+
